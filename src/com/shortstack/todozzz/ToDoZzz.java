@@ -86,7 +86,7 @@ public class ToDoZzz extends ListActivity {
         Cursor notesCursor = mDbHelper.fetchAllListItems();
         startManagingCursor(notesCursor);
 
-        // Create an array to specify the fields we want to display in the list (only TITLE)
+        // Create an array to specify the fields we want to display in the list
         String[] from = new String[]{ListAdapter.KEY_TITLE};
 
         // and an array of the fields we want to bind those fields to (in this case just text1)
