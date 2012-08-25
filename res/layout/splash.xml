@@ -7,8 +7,8 @@
     <ImageView
             android:background="@drawable/todo_splash"
             android:layout_centerHorizontal="true"
-            android:layout_width="300dp"
-            android:layout_height="122dp"
+            android:layout_width="350dp"
+            android:layout_height="142dp"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
             android:gravity="center"/>

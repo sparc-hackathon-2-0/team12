@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">To-Do\'Zzz</string>
-    <string name="no_items"></string>
+    <string name="no_items">Click Menu to add a To-Do Item!</string>
     <string name="menu_insert">Add To-Do Item</string>
     <string name="main">Main</string>
     <string name="menu_delete">Delete To-Do Item</string>

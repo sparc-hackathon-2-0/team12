@@ -80,7 +80,7 @@ public class EditList extends Activity {
                     note.getColumnIndexOrThrow(ListAdapter.KEY_BODY)));
             String priority = note.getString(
                     note.getColumnIndexOrThrow(ListAdapter.KEY_PRIORITY));
-            Log.v("priority",priority);
+
             if (priority.equals("High")) {
                 mPriorityText.setSelection(0);
             } else if (priority.equals("Medium")) {

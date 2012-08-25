@@ -91,9 +91,15 @@
               android:overScrollFooter="@null"/>
 
     <TextView android:id="@id/android:empty"
-              android:layout_width="wrap_content"
+              android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              android:text="@string/no_items"/>
+              android:text="@string/no_items"
+              android:layout_below="@id/timerButtons"
+              android:layout_marginTop="20dp"
+              android:gravity="center"
+              android:textColor="#379db0"
+              android:textSize="20sp"
+            />
 
 
 </RelativeLayout>
