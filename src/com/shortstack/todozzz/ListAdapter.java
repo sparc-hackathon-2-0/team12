@@ -20,6 +20,7 @@ public class ListAdapter {
 
     public static final String KEY_TITLE = "title";
     public static final String KEY_BODY = "body";
+    public static final String KEY_PRIORITY = "priority";
     public static final String KEY_ROWID = "_id";
 
     private static final String TAG = "ListAdapter";
@@ -31,7 +32,7 @@ public class ListAdapter {
      */
     private static final String DATABASE_CREATE =
             "create table list (_id integer primary key autoincrement, "
-                    + "title text not null, body text not null);";
+                    + "title text not null, body text not null, priority text not null);";
 
     private static final String DATABASE_NAME = "todozzz";
     private static final String DATABASE_TABLE = "list";
@@ -99,10 +100,11 @@ public class ListAdapter {
      * @param body the body of the list item
      * @return rowId or -1 if failed
      */
-    public long createListItem(String title, String body) {
+    public long createListItem(String title, String body, String priority) {
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_TITLE, title);
         initialValues.put(KEY_BODY, body);
+        initialValues.put(KEY_PRIORITY, priority);
 
         return mDb.insert(DATABASE_TABLE, null, initialValues);
     }
@@ -126,7 +128,7 @@ public class ListAdapter {
     public Cursor fetchAllListItems() {
 
         return mDb.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TITLE,
-                KEY_BODY}, null, null, null, null, null);
+                KEY_BODY, KEY_PRIORITY}, null, null, null, null, KEY_PRIORITY);
     }
 
     /**
@@ -141,7 +143,7 @@ public class ListAdapter {
         Cursor mCursor =
 
                 mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
-                        KEY_TITLE, KEY_BODY}, KEY_ROWID + "=" + rowId, null,
+                        KEY_TITLE, KEY_BODY, KEY_PRIORITY}, KEY_ROWID + "=" + rowId, null,
                         null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
@@ -160,10 +162,11 @@ public class ListAdapter {
      * @param body value to set ListItem body to
      * @return true if the ListItem was successfully updated, false otherwise
      */
-    public boolean updateListItem(long rowId, String title, String body) {
+    public boolean updateListItem(long rowId, String title, String body, String priority) {
         ContentValues args = new ContentValues();
         args.put(KEY_TITLE, title);
         args.put(KEY_BODY, body);
+        args.put(KEY_PRIORITY, priority);
 
         return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
     }

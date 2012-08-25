@@ -5,24 +5,26 @@
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="8"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
-        <activity android:name=".todozzz.ToDoZzz"
-                  android:windowSoftInputMode="stateHidden|adjustPan"
-                  android:theme="@android:style/Theme.NoTitleBar"
-                  android:label="@string/app_name">
+        <activity android:name=".todozzz.Splash"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".todozzz.List"
+        <activity android:name="com.shortstack.todozzz.ToDoZzz"
+                  android:label="@string/app_name"
                   android:screenOrientation="portrait"
                   android:windowSoftInputMode="stateHidden|adjustPan"
-                  android:theme="@android:style/Theme.NoTitleBar"/>
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name=".AngryBackup" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".todozzz.EditList"
-                  android:screenOrientation="portrait"
-                  android:windowSoftInputMode="stateHidden|adjustPan"
-                  android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name=".todozzz.Naps"
                   android:screenOrientation="portrait"
                   android:windowSoftInputMode="stateHidden|adjustPan"
                   android:theme="@android:style/Theme.NoTitleBar"/>

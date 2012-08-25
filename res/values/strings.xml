@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">To-Do\'Zzz</string>
-    <string name="no_items">No Items Yet</string>
+    <string name="no_items"></string>
     <string name="menu_insert">Add To-Do Item</string>
     <string name="main">Main</string>
     <string name="menu_delete">Delete To-Do Item</string>
-    <string name="title">Title</string>
-    <string name="body">Body</string>
+    <string name="title">Task</string>
+    <string name="body">Details</string>
+    <string name="priority">High</string>
     <string name="confirm">Confirm</string>
     <string name="edit_item">Edit To-Do Item</string>
+
+    <string name="timer">00:00:00</string>
+    <string name="startText">Start</string>
+    <string name="resetText">Reset</string>
+    <string name="backgroundText"></string>
+    <string name="stopText">Stop</string>
+
+    <string-array name="priority">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Not That Important</item>
+    </string-array>
+
 </resources>

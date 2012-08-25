@@ -1,16 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="fill_parent"
+              style="@style/background">
 
-<ListView android:id="@id/android:list"
+    <ImageView
+            android:background="@drawable/todo"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="148dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/todo"
+            android:gravity="center"/>
+
+    <TextView
+            android:textColor="#444444"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="60sp"
+            android:text="@string/timer"
+            android:layout_below="@id/todo"
+            android:id="@+id/timer">
+    </TextView>
+
+    <TableLayout android:orientation="horizontal"
+                 android:id="@+id/timerButtons"
+                 android:layout_centerHorizontal="true"
+                 android:gravity="center"
+                 android:layout_width="fill_parent"
+                 android:layout_below="@id/timer"
+                 android:layout_margin="15dp"
+                 android:layout_height="wrap_content">
+
+    <TableRow
+            android:gravity="center">
+        <Button
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:shadowColor="#DF726E"
+                android:text="@string/stopText"
+                android:id="@+id/stopButton"
+                android:background="@drawable/stop_button"
+                android:visibility="gone">
+        </Button>
+        <Button
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:shadowColor="#FBEBC5"
+                android:text="@string/startText"
+                android:background="@drawable/start_button"
+                android:id="@+id/startButton">
+        </Button>
+        <Button
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:shadowColor="#959597"
+                android:text="@string/resetText"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/reset_button"
+                android:id="@+id/resetButton">
+        </Button>
+        <TextView
+                style="@style/backgroundText"
+                android:text="@string/backgroundText"
+                android:id="@+id/backgroundText">
+        </TextView>
+    </TableRow>
+    </TableLayout>
+
+
+    <ListView android:id="@id/android:list"
               android:layout_width="fill_parent"
               android:padding="15dp"
-              android:layout_height="wrap_content"/>
+              android:layout_below="@id/timerButtons"
+              android:layout_height="fill_parent"
+              android:divider="@null"
+              android:dividerHeight="5dp"
+              android:scrollbars="vertical"
+              android:cacheColorHint="@android:color/transparent"
+              android:background="@android:color/transparent"
+              android:overScrollFooter="@null"/>
+
     <TextView android:id="@id/android:empty"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/no_items"/>
 
-</LinearLayout>
+
+</RelativeLayout>

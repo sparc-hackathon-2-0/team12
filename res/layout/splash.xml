@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+            android:background="@drawable/todo_splash"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="122dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:gravity="center"/>
+</RelativeLayout>

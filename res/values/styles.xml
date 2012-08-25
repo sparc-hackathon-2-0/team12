@@ -1,0 +1,56 @@
+<resources>
+    <style name="listViewStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_states</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">4dp</item>
+
+    </style>
+    <style name="textViewStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#4d4d4d</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    <style name="editTextStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_states</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    <style name="background">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@drawable/bg_plain</item>
+        <item name="android:textColor">#4b4b4b</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    <style name="backgroundText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">1dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#77787A</item>
+        <item name="android:shadowColor">#BBBDBE</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="spinnerForm">
+        <item name="android:background">@drawable/form_element</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+</resources>

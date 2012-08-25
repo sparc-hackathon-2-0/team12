@@ -1,5 +1,8 @@
 package com.shortstack.todozzz;
 
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import com.shortstack.R;
 import android.app.Activity;
 import android.database.Cursor;
@@ -20,6 +23,7 @@ import java.sql.SQLException;
 public class EditList extends Activity {
     private EditText mTitleText;
     private EditText mBodyText;
+    private Spinner mPriorityText;
     private Long mRowId;
     private ListAdapter mDbHelper;
 
@@ -38,6 +42,7 @@ public class EditList extends Activity {
 
         mTitleText = (EditText) findViewById(R.id.title);
         mBodyText = (EditText) findViewById(R.id.body);
+        mPriorityText = (Spinner) findViewById(R.id.priority);
 
         Button confirmButton = (Button) findViewById(R.id.confirm);
 
@@ -73,6 +78,16 @@ public class EditList extends Activity {
                     note.getColumnIndexOrThrow(ListAdapter.KEY_TITLE)));
             mBodyText.setText(note.getString(
                     note.getColumnIndexOrThrow(ListAdapter.KEY_BODY)));
+            String priority = note.getString(
+                    note.getColumnIndexOrThrow(ListAdapter.KEY_PRIORITY));
+            Log.v("priority",priority);
+            if (priority.equals("High")) {
+                mPriorityText.setSelection(0);
+            } else if (priority.equals("Medium")) {
+                mPriorityText.setSelection(1);
+            } else {
+                mPriorityText.setSelection(2);
+            }
         }
     }
 
@@ -102,14 +117,15 @@ public class EditList extends Activity {
     private void saveState() {
         String title = mTitleText.getText().toString();
         String body = mBodyText.getText().toString();
+        String priority = mPriorityText.getSelectedItem().toString();
 
         if (mRowId == null) {
-            long id = mDbHelper.createListItem(title, body);
+            long id = mDbHelper.createListItem(title, body, priority);
             if (id > 0) {
                 mRowId = id;
             }
         } else {
-            mDbHelper.updateListItem(mRowId, title, body);
+            mDbHelper.updateListItem(mRowId, title, body, priority);
         }
     }
 }
